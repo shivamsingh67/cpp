@@ -1,0 +1,20 @@
+//Binary Search
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+         int n = 0, m = nums.size() - 1;
+    while(n <= m)
+    {
+        int mid = n + (m - n) / 2;
+        
+        if(nums[mid] == target)
+            return mid;
+        else if(nums[mid] > target)
+            m = mid - 1;
+        else
+            n = mid + 1;
+    }
+    
+    return -1;
+    }
+};
